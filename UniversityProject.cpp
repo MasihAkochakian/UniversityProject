@@ -84,3 +84,18 @@ void Professor::createExam(string Name, int NumOfQ, int TotalScore, int TotalTim
     Examination TempExam(Name, NumOfQ, TotalScore, TotalTime);
     ExamList.push_back(TempExam);
 }
+
+void Professor::showAllExams() const {
+    if (ExamList.size() != 0) {
+        for (int i = 0; i < ExamList.size(); i++) {
+            cout << "\nExam " << i + 1 << " : ("
+                << " Number of Questions: " << ExamList[i].getNumberOfQuestions()
+                << ",  " << " Total score: " << ExamList[i].getTotalScore()
+                << ",  " << " Total time: " << ExamList[i].getTotalTime() << " )\n";
+            ExamList[i].print();
+        }
+    } else {
+        cout << "No Items Found.\n";
+    }
+    cout << endl;
+}
