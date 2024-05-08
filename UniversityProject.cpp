@@ -99,3 +99,81 @@ void Professor::showAllExams() const {
     }
     cout << endl;
 }
+
+void Professor::addStudentToExam(int examIndex, Student* student) {
+    // کد پیاده‌سازی اضافه کردن دانشجو به لیست دانشجویان امتحان
+}
+
+void Professor::gradeExam(int examIndex, vector<int>& grades) {
+    // کد پیاده‌سازی تصحیح امتحان و وارد کردن نمرات
+}
+
+void Professor::sendNotification(string message) {
+    // کد پیاده‌سازی ارسال پیام به دانشجوها
+}
+
+void Professor::createStudentList(User* Person[]) {
+    StudentList Temp(Person);
+    if (Temp.studentList.capacity() != 0) {
+        List.push_back(Temp);
+    }
+}
+
+void Professor::printStudentList() const {
+    if (List.size() != 0) {
+        cout << "Number of Lists : " << List.size() << endl
+            << "====================================\n";
+        for (int i = 0; i < List.size(); i++) {
+            if (List[i].studentList.capacity() != 0) {
+                cout << " #" << i + 1 << " List :\n";
+                List[i].printStudentList();
+                cout << "-----------------------------------------\n";
+            }
+        }
+    } else {
+        cout << "\nNo List founded !\n";
+    }
+}
+
+// توابع کلاس Student
+void Student::takeExam(Examination& exam, vector<int>& answers) {
+    // کد پیاده‌سازی بخش گرفتن امتحان توسط دانشجو
+}
+void Student::viewGrades() const {
+    // کد پیاده‌سازی بخش مشاهده نمرات توسط دانشجو
+}
+
+// توابع کلاس StudentList
+void StudentList::addStudent(User* student) {
+    // کد پیاده‌سازی اضافه کردن دانشجو به لیست
+}
+
+void StudentList::removeStudent(string username) {
+    // کد پیاده‌سازی حذف دانشجو از لیست
+}
+
+void StudentList::printStudentList() const {
+    // کد پیاده‌سازی چاپ لیست دانشجویان
+}
+
+// تابع main
+int main() {
+    Professor prof("professor_username", "professor_password");
+    Student student1("student1_username", "student1_password");
+    Student student2("student2_username", "student2_password");
+
+    // ایجاد امتحان توسط استاد
+    prof.createExam("Exam1", 10, 100, 90);
+
+    // چاپ تمام امتحان‌ها توسط استاد
+    cout << "All Exams:" << endl;
+    prof.showAllExams();
+
+    // اضافه کردن دانشجو به لیست دانشجویان امتحان
+    prof.addStudentToExam(0, &student1);
+
+    // بررسی و چاپ لیست دانشجویان هر امتحان
+    prof.printStudentList();
+
+    return 0;
+}
